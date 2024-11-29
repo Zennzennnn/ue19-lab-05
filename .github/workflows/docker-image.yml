@@ -36,3 +36,8 @@ jobs:
           push: true 
           tags: ghcr.io/zennzennnn/ue19-lab-05
 
+      - name: Analyze Docker image with Trivy
+        uses: aquasecurity/trivy-action@master 
+        with:
+          image-ref: ghcr.io/zennzennnn/ue19-lab-05
+          severity: HIGH,CRITICAL
